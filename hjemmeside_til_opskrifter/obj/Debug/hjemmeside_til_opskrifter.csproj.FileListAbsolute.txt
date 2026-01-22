@@ -1,0 +1,2 @@
+C:\Users\Bruger\Desktop\html\hjemmeside_til_opskrifter\hjemmeside_til_opskrifter\obj\Debug\hjemmeside_til_opskrifter.csproj.AssemblyReference.cache
+C:\Users\Bruger\Desktop\html\hjemmeside_til_opskrifter\hjemmeside_til_opskrifter\obj\Debug\hjemmeside_til_opskrifter.csproj.CoreCompileInputs.cache
