@@ -1,89 +1,192 @@
 ﻿<!doctype html>
 <html lang="da">
   <head>
+    <!-- Metadata -->
     <meta charset="UTF-8" />
-    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Christian Insight | Forside</title>
+    <!-- Stylesheet -->
     <link rel="stylesheet" href="stylesheet.css" />
   </head>
 
   <body>
-    <!-- Header indeholder sidens hovedtitel -->
-    <header>Christian Insight</header>
+    <!-- HEADER - Sidens overskrift og titel -->
+    <header>
+      <h1 class="site-title">Christian Insight</h1>
+      <p class="site-subtitle">Aktuelle historier, analyser og perspektiver</p>
+    </header>
 
-    <!-- Navigation med liste af links til alle artikler -->
-    <nav>
-      
-      <!-- Uordnet liste bruges til at organisere navigation links -->
+    <!-- NAVIGATION - Hovedmenu med links til alle artikler -->
+    <nav aria-label="Hovednavigation">
       <ul>
         <li><a href="index.html">Forside</a></li>
         <li>
           <a href="Børshus_slår_fast_Novo_får_et_svært_2026.html"
-            >Børshus slår fast: Novo får et svært 2026</a
+            >Børs: Novo får et svært 2026</a
           >
         </li>
         <li>
           <a href="Storpolitisk_drama_mellem_USA_Danmark_og_Grønland.html"
-            >Storpolitisk drama mellem USA, Danmark og Grønland</a
+            >Storpolitisk drama USA/DK/Grønland</a
           >
         </li>
         <li>
           <a href="Lettelsens_suk_på_børserne_efter_Trump_udmelding.html"
-            >Lettelsens suk på børserne efter Trump-udmelding</a
+            >Børsernes lettelse efter Trump</a
           >
         </li>
         <li>
           <a href="Danske_EM_chancer_fader_efter_skuffende_resultat.html"
-            >Danske EM-chancer fader efter skuffende resultat</a
+            >Danske EM-chancer fader</a
           >
         </li>
-        <li></li>
         <li>
           <a
             href="Sjældent_naturfænomen_Nordlyset_brændte_to_nætter_i_træk.html"
-            >Sjældent naturfænomen: Nordlyset brændte to nætter i træk</a
+            >Nordlyset to nætter i træk</a
           >
         </li>
-        
-        <li>
-          <a
-            href="id_buzz.html"
-            >ID Buzz får hård kritik fra street food-branchen</a
-          >
-        </li>
-
+        <li><a href="id_buzz.html">ID Buzz får hård kritik</a></li>
       </ul>
     </nav>
 
-    <!-- Main indeholder hovedindholdet på forsiden -->
-    <main>
+    <!-- INDHOLD - Responsivt grid med hovedindhold og sidebar -->
+    <div class="content-wrapper">
+      <!-- MAIN - Hovedindholdet på siden -->
+      <main>
+        <!-- Hero sektion - Velkommen -->
+        <section class="hero" aria-labelledby="velkomst">
+          <h2 id="velkomst">Velkommen til magasinet</h2>
+          <p class="lede">
+            Velkommen til vores artikelunivers, hvor viden, indsigt og
+            perspektiv er i fokus. Her finder du artikler, der går i dybden med
+            aktuelle emner, tendenser og problemstillinger – skrevet for at
+            informere, inspirere og skabe overblik.
+          </p>
+          <figure>
+            <img
+              src="https://images.unsplash.com/photo-1495020689067-958852a7765e?w=960&h=480&fit=crop"
+              alt="Magasin artikler og kaffe"
+              loading="lazy"
+            />
+            <figcaption>
+              Fordybende artikler til din næste kaffepause.
+            </figcaption>
+          </figure>
+        </section>
 
-      <!-- Section bruges til at gruppere velkomstteksten -->
-      <section>
+        <!-- Nyhedsbrev formular -->
+        <section class="newsletter-form" aria-labelledby="nyhedsbrev">
+          <h2 id="nyhedsbrev">Tilmeld nyhedsbrevet</h2>
+          <p>Få ugens vigtigste artikler og analyser direkte i din indbakke.</p>
+          <form>
+            <label for="navn">Navn</label>
+            <input
+              id="navn"
+              name="navn"
+              type="text"
+              placeholder="Dit navn"
+              required
+            />
+            <label for="email">Email</label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              placeholder="din@mail.dk"
+              required
+            />
+            <button type="submit">Tilmeld</button>
+          </form>
+        </section>
 
-        <!-- H1 bruges til hovedoverskriften på forsiden -->
-        <h1>Velkommen til!</h1>
+        <!-- Kontaktoplysninger -->
+        <section class="contact-card" aria-labelledby="kontakt">
+          <h2 id="kontakt">Kontakt & sociale medier</h2>
+          <p>Har du spørgsmål eller ønsker til artikler?</p>
+          <p>
+            Email:
+            <a href="mailto:redaktion@christianinsight.dk"
+              >redaktion@christianinsight.dk</a
+            >
+          </p>
+          <p>Telefon: +45 12 34 56 78</p>
+        </section>
+      </main>
 
-        <p>
-          Velkommen til vores artikelunivers, hvor viden, indsigt og perspektiv
-          er i fokus. Her finder du artikler, der går i dybden med aktuelle
-          emner, tendenser og problemstillinger – skrevet med det formål at
-          informere, inspirere og skabe overblik.
-        </p>
+      <!-- ASIDE - Sidebar med kort overblik og temaer -->
+      <aside aria-labelledby="sideindhold">
+        <h2 id="sideindhold">Sideindhold</h2>
 
-        <p>
-          Vores artikler er baseret på research, erfaring og faglig indsigt.
-          Formålet er at formidle kompleks viden på en klar og forståelig måde,
-          så du hurtigt kan få overblik og træffe bedre beslutninger.
-        </p>
+        <!-- Kort overblik af ugens nyhed -->
+        <section aria-labelledby="kort-nyt">
+          <h3 id="kort-nyt">Kort overblik</h3>
+          <figure>
+            <img
+              src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?w=600&h=360&fit=crop"
+              alt="Aviser og magasiner"
+              loading="lazy"
+            />
+            <figcaption>Ugens magasiner og analyser samlet ét sted.</figcaption>
+          </figure>
+          <ul>
+            <li>Markederne ånder lettet op efter handelstold-pause.</li>
+            <li>Vejrudsigten lover klar nat – perfekt til nordlys-jagt.</li>
+            <li>Idédebattør peger på Arktis som ny geopolitisk brændpunkt.</li>
+          </ul>
+        </section>
 
-        <p>
-          Brug menuen ovenfor til at gå på opdagelse i vores artikler – og lad
-          dig inspirere!
-        </p>
-      </section>
-    </main>
+        <!-- Populære temaer -->
+        <section aria-labelledby="temaer">
+          <h3 id="temaer">Populære temaer</h3>
+          <ul>
+            <li>Medicinal og sundhed</li>
+            <li>Geopolitiske strømninger</li>
+            <li>Teknologi til hverdagen</li>
+            <li>Sportens små margener</li>
+          </ul>
+        </section>
+      </aside>
+    </div>
 
-    <!-- Footer indeholder copyright information i bunden af siden -->
+    <!-- FOOTER - Copyright information -->
     <footer>Copyright © 2026 All rights reserved.</footer>
+
+    <!-- DARK MODE TOGGLE - Knap til at skifte tema -->
+    <button
+      class="dark-mode-toggle"
+      id="darkModeToggle"
+      aria-label="Toggle dark mode"
+    >
+      🌙
+    </button>
+
+    <!-- JAVASCRIPT - Dark mode funktionalitet -->
+    <script>
+      // Hent dark mode toggle knappen
+      const toggleButton = document.getElementById("darkModeToggle");
+
+      // Skift mellem light og dark mode når der klikkes
+      toggleButton.addEventListener("click", () => {
+        document.body.classList.toggle("dark-mode");
+
+        // Opdater ikon og gem brugerens valg
+        if (document.body.classList.contains("dark-mode")) {
+          toggleButton.textContent = "☀️";
+          localStorage.setItem("theme", "dark");
+        } else {
+          toggleButton.textContent = "🌙";
+          localStorage.setItem("theme", "light");
+        }
+      });
+
+      // Gendan brugerens tema-præference ved sideindlæsning
+      window.addEventListener("load", () => {
+        if (localStorage.getItem("theme") === "dark") {
+          document.body.classList.add("dark-mode");
+          toggleButton.textContent = "☀️";
+        }
+      });
+    </script>
   </body>
 </html>

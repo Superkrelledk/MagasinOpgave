@@ -1,90 +1,359 @@
-﻿body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background: #fff8f0;
-  color: #4a3c31;
+﻿/* Farvevariabler for hele websitet */
+:root {
+  --farve-guld: #c89456;
+  --farve-brun: #8b5e3c;
+  --farve-baggrund: #faf7f2;
+  --farve-tekst: #333;
+}
+
+/* Body styling med smooth transitions */
+body {
+  font-family: "Open Sans", Arial, sans-serif;
+  background: var(--farve-baggrund);
+  color: var(--farve-tekst);
   margin: 0;
   padding: 0;
   line-height: 1.6;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 
+/* Mørkt tema med inverterede farver */
+body.dark-mode {
+  background: #1a1a1a;
+  color: #e0e0e0;
+  --farve-baggrund: #1a1a1a;
+  --farve-tekst: #e0e0e0;
+}
+
+body.dark-mode header {
+  background-color: #2d2416;
+}
+
+body.dark-mode nav {
+  background-color: #2a2520;
+}
+
+body.dark-mode nav a {
+  color: #e0e0e0;
+}
+
+body.dark-mode nav a:hover {
+  color: var(--farve-guld);
+}
+
+body.dark-mode section,
+body.dark-mode aside {
+  background: #242424;
+  border-color: #3a3a3a;
+}
+
+body.dark-mode a {
+  color: #c89456;
+}
+
+body.dark-mode input,
+body.dark-mode button {
+  background: #2a2a2a;
+  color: #e0e0e0;
+  border-color: #444;
+}
+
+body.dark-mode input:focus {
+  border-color: var(--farve-guld);
+}
+
+body.dark-mode .newsletter-form button {
+  background: var(--farve-guld);
+  color: white;
+}
+
+body.dark-mode .newsletter-form button:hover {
+  background: #b08446;
+}
+
+/* Sticky header med guld farve */
 header {
-  background-color: #dba159;
-  padding: 20px 0;
+  background-color: var(--farve-guld);
+  padding: 3px;
   text-align: center;
   color: white;
-  font-weight: bold;
-  font-size: 1.8rem;
-  letter-spacing: 1px;
+  font-size: 1.1rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
+header::after {
+  content: "";
+  display: block;
+  width: 32px;
+  height: 2px;
+  background: white;
+  margin: 4px auto 0;
+}
+
+/* Sticky navigation menu */
 nav {
-  margin: 0;
-  background-color: #f0e0d0;
-  padding: 10px 0;
+  background-color: #e8dcc8;
+  padding: 10px;
   text-align: center;
+  position: sticky;
+  top: 20px;
+  z-index: 99;
 }
 
 nav ul {
   list-style: none;
   padding: 0;
   margin: 0;
-  display: inline-flex;
-  gap: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
   flex-wrap: wrap;
-}
-
-nav li {
-  display: inline;
 }
 
 nav a {
   text-decoration: none;
-  color: #8b5e3c;
-  font-weight: 600;
-  padding: 6px 12px;
+  color: var(--farve-brun);
+  padding: 8px 15px;
   border-radius: 5px;
-  transition: background-color 0.3s ease;
+  transition: background 0.2s;
 }
 
 nav a:hover {
-  background-color: #dba159;
+  background-color: var(--farve-guld);
   color: white;
 }
 
-main {
-  max-width: 900px;
+nav a:focus {
+  outline: 2px solid var(--farve-brun);
+}
+
+/* Responsivt grid layout for indhold */
+.content-wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+  max-width: 1200px;
   margin: 40px auto;
   padding: 0 20px;
 }
 
+/* H1 med understreget guld linje */
 h1 {
-  font-family: "Georgia", serif;
+  font-family: "Lora", Georgia, serif;
+  color: var(--farve-brun);
   text-align: center;
-  color: #a65e2e;
-  margin-bottom: 20px;
+  font-size: 2rem;
 }
 
+h1::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: var(--farve-guld);
+  margin: 10px auto;
+}
+
+h2 {
+  font-family: "Lora", Georgia, serif;
+  color: var(--farve-brun);
+  text-align: center;
+}
+
+h3 {
+  font-family: "Lora", Georgia, serif;
+  color: var(--farve-brun);
+  margin-top: 25px;
+}
+
+
+/* Kortdesign for indholdsområder */
 section {
   background: white;
   padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
+/* Aside */
+aside {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-left: 3px solid var(--farve-guld);
+}
+
+aside h3 {
+  margin-top: 0;
+}
+
+aside a {
+  color: var(--farve-brun);
+  text-decoration: none;
+}
+
+aside a:hover {
+  color: var(--farve-guld);
+  text-decoration: underline;
+}
+
+
+/* Billedramme med caption */
+figure {
+  margin: 20px 0;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+figure img {
+  width: 100%;
+  display: block;
+}
+
+figcaption {
+  padding: 10px;
+  background: #f5f0e8;
+  font-size: 0.9rem;
+  font-style: italic;
+  text-align: center;
+}
+
+/* Centreret artikel med maksimal læsebredde */
+article {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+article section {
+  max-width: 780px;
+  margin: 0 auto 24px;
+}
+
+article figure {
+  max-width: 760px;
+  margin: 16px auto;
+}
+
+article figure img {
+  max-height: 360px;
+  object-fit: cover;
+}
+
+/* Gradient baggrund til nyhedsbrev */
+.newsletter-form {
+  background: linear-gradient(135deg, #c89456, #a67744);
+  padding: 30px;
+  border-radius: 8px;
+  color: white;
+}
+
+.newsletter-form h2 {
+  color: white;
+  margin-top: 0;
+}
+
+.newsletter-form input {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+.newsletter-form input:focus {
+  outline: 2px solid white;
+}
+
+.newsletter-form button {
+  width: 100%;
+  padding: 10px;
+  background: white;
+  color: var(--farve-brun);
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.newsletter-form button::before {
+  content: "→ ";
+}
+
+.newsletter-form button:hover {
+  background: #f5f5f5;
+}
+
+/* Flydende knap nederst til højre */
+.dark-mode-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--farve-guld);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+/* Footer med copyright information */
 footer {
   text-align: center;
-  font-size: 0.9rem;
-  color: #8b5e3c;
-  margin: 40px 0;
+  padding: 20px;
+  color: #888;
 }
 
-@media (max-width: 700px) {
+/* Mobil: < 600px */
+@media (max-width: 599px) {
   nav ul {
     flex-direction: column;
-    gap: 10px;
   }
 
-  nav a {
-    display: block;
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  section {
+    padding: 20px;
+  }
+}
+
+/* Tablet 600-1024px */
+@media (min-width: 600px) {
+  .content-wrapper {
+    grid-template-columns: 2fr 1fr;
+  }
+
+  main {
+    grid-column: 1;
+  }
+
+  aside {
+    grid-column: 2;
+  }
+}
+
+/* Desktop > 1024px */
+@media (min-width: 1024px) {
+  .content-wrapper {
+    grid-template-columns: 1fr 2fr 1fr;
+  }
+
+  main {
+    grid-column: 2;
+  }
+
+  aside {
+    grid-column: 3;
   }
 }
